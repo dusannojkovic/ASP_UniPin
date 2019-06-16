@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20190601124151_create_tables.cs" />
+    <Compile Remove="Migrations\20190601124151_create_tables.Designer.cs" />
+    <Compile Remove="Migrations\20190602133630_create_tables.cs" />
+    <Compile Remove="Migrations\20190602133630_create_tables.Designer.cs" />
+    <Compile Remove="Migrations\20190602134001_create_tables.cs" />
+    <Compile Remove="Migrations\20190602134001_create_tables.Designer.cs" />
+    <Compile Remove="Migrations\20190602135429_create_tables.cs" />
+    <Compile Remove="Migrations\20190602135429_create_tables.Designer.cs" />
+    <Compile Remove="Migrations\20190602203935_create-tables.cs" />
+    <Compile Remove="Migrations\20190602203935_create-tables.Designer.cs" />
+    <Compile Remove="Migrations\20190603173228_add-tables.cs" />
+    <Compile Remove="Migrations\20190603173228_add-tables.Designer.cs" />
+    <Compile Remove="Migrations\20190603173710_add-tables.cs" />
+    <Compile Remove="Migrations\20190603173710_add-tables.Designer.cs" />
+    <Compile Remove="Migrations\20190604205839_delete-user.cs" />
+    <Compile Remove="Migrations\20190604205839_delete-user.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

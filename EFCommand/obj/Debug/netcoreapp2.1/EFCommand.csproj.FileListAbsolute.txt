@@ -1,0 +1,16 @@
+D:\ProjektiAsp\UniPin\EFCommand\bin\Debug\netcoreapp2.1\EFCommand.deps.json
+D:\ProjektiAsp\UniPin\EFCommand\bin\Debug\netcoreapp2.1\EFCommand.dll
+D:\ProjektiAsp\UniPin\EFCommand\bin\Debug\netcoreapp2.1\EFCommand.pdb
+D:\ProjektiAsp\UniPin\EFCommand\bin\Debug\netcoreapp2.1\Application.dll
+D:\ProjektiAsp\UniPin\EFCommand\bin\Debug\netcoreapp2.1\Domain.dll
+D:\ProjektiAsp\UniPin\EFCommand\bin\Debug\netcoreapp2.1\UniPin_DataAccess.dll
+D:\ProjektiAsp\UniPin\EFCommand\bin\Debug\netcoreapp2.1\Application.pdb
+D:\ProjektiAsp\UniPin\EFCommand\bin\Debug\netcoreapp2.1\UniPin_DataAccess.pdb
+D:\ProjektiAsp\UniPin\EFCommand\bin\Debug\netcoreapp2.1\Domain.pdb
+D:\ProjektiAsp\UniPin\EFCommand\obj\Debug\netcoreapp2.1\EFCommand.csprojAssemblyReference.cache
+D:\ProjektiAsp\UniPin\EFCommand\obj\Debug\netcoreapp2.1\EFCommand.csproj.CoreCompileInputs.cache
+D:\ProjektiAsp\UniPin\EFCommand\obj\Debug\netcoreapp2.1\EFCommand.AssemblyInfoInputs.cache
+D:\ProjektiAsp\UniPin\EFCommand\obj\Debug\netcoreapp2.1\EFCommand.AssemblyInfo.cs
+D:\ProjektiAsp\UniPin\EFCommand\obj\Debug\netcoreapp2.1\EFCommand.csproj.CopyComplete
+D:\ProjektiAsp\UniPin\EFCommand\obj\Debug\netcoreapp2.1\EFCommand.dll
+D:\ProjektiAsp\UniPin\EFCommand\obj\Debug\netcoreapp2.1\EFCommand.pdb

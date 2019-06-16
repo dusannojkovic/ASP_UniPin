@@ -1,0 +1,76 @@
+﻿@model Application.DTO.PostDTO
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PostDTO</h4>
+    @if (TempData["error"] != null)
+    {
+        <p class="text-danger">@TempData["error"]</p>
+    }
+    <hr />
+    @if (Model != null)
+    {
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.Id)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Id)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Naslov)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Naslov)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Opis)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Opis)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Picture)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.Picture)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.PostBy)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.PostBy)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.CategoryName)
+    </dt>
+    <dd>
+        @Html.DisplayFor(model => model.CategoryName)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.Comments)
+    </dt>
+    @foreach (var coment in Model.Comments)
+    {
+        <dd>
+            <p>@coment.Tekst</p>
+        </dd>
+    }
+
+
+</dl>
+    }
+    else
+    {
+        <h1>Model ne postoji!!</h1>
+    }
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

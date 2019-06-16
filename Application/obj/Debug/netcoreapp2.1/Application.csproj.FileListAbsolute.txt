@@ -1,0 +1,9 @@
+D:\ProjektiAsp\UniPin\Application\bin\Debug\netcoreapp2.1\Application.deps.json
+D:\ProjektiAsp\UniPin\Application\bin\Debug\netcoreapp2.1\Application.dll
+D:\ProjektiAsp\UniPin\Application\bin\Debug\netcoreapp2.1\Application.pdb
+D:\ProjektiAsp\UniPin\Application\obj\Debug\netcoreapp2.1\Application.csprojAssemblyReference.cache
+D:\ProjektiAsp\UniPin\Application\obj\Debug\netcoreapp2.1\Application.csproj.CoreCompileInputs.cache
+D:\ProjektiAsp\UniPin\Application\obj\Debug\netcoreapp2.1\Application.AssemblyInfoInputs.cache
+D:\ProjektiAsp\UniPin\Application\obj\Debug\netcoreapp2.1\Application.AssemblyInfo.cs
+D:\ProjektiAsp\UniPin\Application\obj\Debug\netcoreapp2.1\Application.dll
+D:\ProjektiAsp\UniPin\Application\obj\Debug\netcoreapp2.1\Application.pdb

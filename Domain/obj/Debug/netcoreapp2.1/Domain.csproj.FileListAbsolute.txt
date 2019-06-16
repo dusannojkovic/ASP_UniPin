@@ -1,0 +1,9 @@
+D:\ProjektiAsp\UniPin\Domain\bin\Debug\netcoreapp2.1\Domain.deps.json
+D:\ProjektiAsp\UniPin\Domain\bin\Debug\netcoreapp2.1\Domain.dll
+D:\ProjektiAsp\UniPin\Domain\bin\Debug\netcoreapp2.1\Domain.pdb
+D:\ProjektiAsp\UniPin\Domain\obj\Debug\netcoreapp2.1\Domain.csprojAssemblyReference.cache
+D:\ProjektiAsp\UniPin\Domain\obj\Debug\netcoreapp2.1\Domain.csproj.CoreCompileInputs.cache
+D:\ProjektiAsp\UniPin\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfoInputs.cache
+D:\ProjektiAsp\UniPin\Domain\obj\Debug\netcoreapp2.1\Domain.AssemblyInfo.cs
+D:\ProjektiAsp\UniPin\Domain\obj\Debug\netcoreapp2.1\Domain.dll
+D:\ProjektiAsp\UniPin\Domain\obj\Debug\netcoreapp2.1\Domain.pdb

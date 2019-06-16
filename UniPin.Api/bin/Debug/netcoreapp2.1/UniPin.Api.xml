@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UniPin.Api</name>
+    </assembly>
+    <members>
+        <member name="M:UniPin.Api.Controllers.CategoryController.Get(Application.Searches.CategorySearch)">
+            <summary>
+            Return ALL CATEGORIES
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.CategoryController.Get(System.Int32)">
+            <summary>
+            Return ONE CATEGORY
+            </summary>
+        </member>
+    </members>
+</doc>
