@@ -47,3 +47,4 @@ D:\ProjektiAsp\UniPin\UniPin.MVC\obj\Debug\netcoreapp2.1\Razor\Views\Post\Index.
 D:\ProjektiAsp\UniPin\UniPin.MVC\obj\Debug\netcoreapp2.1\Razor\Views\Post\Details.g.cshtml.cs
 D:\ProjektiAsp\UniPin\UniPin.MVC\obj\Debug\netcoreapp2.1\Razor\Views\Post\Create.g.cshtml.cs
 D:\ProjektiAsp\UniPin\UniPin.MVC\obj\Debug\netcoreapp2.1\Razor\Views\Post\Edit.g.cshtml.cs
+D:\ProjektiAsp\UniPin\UniPin.MVC\obj\Debug\netcoreapp2.1\Razor\Views\Post\Delete.g.cshtml.cs

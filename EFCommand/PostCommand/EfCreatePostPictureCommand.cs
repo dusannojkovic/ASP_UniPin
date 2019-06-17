@@ -1,7 +1,9 @@
 ﻿using Application.Commands.Post;
 using Application.DTO;
+using Domain;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using UniPin_DataAccess;
 
@@ -15,24 +17,29 @@ namespace EFCommand.PostCommand
 
         public void Execute(PostDTO request)
         {
-            var slika = new Domain.Picture
-            {
-                CreatedAt = DateTime.Now,
-                Putanja = request.Picture
-            };
-            _context.Pictures.Add(slika);
-            _context.SaveChanges();
-            var pictureId = slika.Id;
 
-            var post = _context.Posts.Add(new Domain.Post
+
+            //PROBAO SAM DA UBACIM SLIKU PA POST ALI NISAM ZNAO KAKO
+            //var slika = new Domain.Picture
+            //{
+            //    CreatedAt = DateTime.Now,
+            //    Putanja = request.Picture
+            //};
+            //_context.Pictures.Add(slika);
+            //_context.SaveChanges();
+            //var pictureId = slika.Id;
+
+            _context.Posts.Add(new Post
             {
                 CategoryId = request.CategoryId,
                 Naslov = request.Naslov,
                 Opis = request.Opis,
-                PictureId = pictureId,
+                PictureId = 9,
                 UserId = request.UserId,
                 CreatedAt = DateTime.Now,
                 IsDeleted = false
+                 
+                
                 
             });
 

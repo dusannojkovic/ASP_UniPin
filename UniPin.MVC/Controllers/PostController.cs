@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Application.Commands;
@@ -22,15 +23,21 @@ namespace UniPin_MVC.Controllers
         private readonly IAllCategory _allCategory;
         private readonly IAllUser _allUser;
         private readonly ICreatePostCommand _create;
+        private readonly IUpdatePostCommand _update;
+        private readonly IDeletePostCommand _delete;
 
-        public PostController(IGetPosts getAll, IGetOnePostCommand getOne, IAllCategory allCategory, IAllUser allUser, ICreatePostCommand create)
+        public PostController(IGetPosts getAll, IGetOnePostCommand getOne, IAllCategory allCategory, IAllUser allUser, ICreatePostCommand create, IUpdatePostCommand update, IDeletePostCommand delete)
         {
             _getAll = getAll;
             _getOne = getOne;
             _allCategory = allCategory;
             _allUser = allUser;
             _create = create;
+            _update = update;
+            _delete = delete;
         }
+
+
 
 
 
@@ -99,46 +106,55 @@ namespace UniPin_MVC.Controllers
             }
             catch(Exception e)
             {
+          
+                TempData["error"] = e.Message;
                 return View();
             }
         }
 
         // GET: Post/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int id, CategoryDTO dto, UserDTO user)
         {
-            return View();
+            ViewBag.Categories = _allCategory.Execute(dto);
+            ViewBag.Users = _allUser.Execute(user);
+            var one = _getOne.Execute(id);
+            return View(one);
         }
 
         // POST: Post/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, PostDTO dto)
         {
             try
             {
-                // TODO: Add update logic here
+                _update.Execute(dto);
 
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception e)
             {
+
+                TempData["error"] = e.Message;
                 return View();
             }
         }
 
         // GET: Post/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int id, PostDTO dto)
         {
-            return View();
+            dto = _getOne.Execute(id);
+            return View(dto);
         }
 
         // POST: Post/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id)
         {
             try
             {
+                _delete.Execute(id);
                 // TODO: Add delete logic here
 
                 return RedirectToAction(nameof(Index));

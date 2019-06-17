@@ -53,6 +53,8 @@ namespace UniPin.MVC
             services.AddTransient<IGetPosts, EfGetPosts>();
             services.AddTransient<IGetOnePostCommand, EfOnePost>();
             services.AddTransient<ICreatePostCommand, EfCreatePostPictureCommand>();
+            services.AddTransient<IUpdatePostCommand, EfWebUpdate>();
+            services.AddTransient<IDeletePostCommand, EfDeletePostCommand>();
             //UserCommand
 
             services.AddTransient<IAllUser, EfAllUser>();
