@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Application.Commands.Post;
 using Application.DTO;
 using Application.Exceptions;
+using Application.Interfaces;
 using Application.Searches;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -20,15 +21,19 @@ namespace UniPin.Api.Controllers
         private readonly IGetOnePostCommand _getOnePost;
         private readonly IDeletePostCommand _deletePost;
         private readonly IUpdatePostCommand _updatePost;
+        private IEmailSender sender;
 
-        public PostController(ICreatePostCommand createPost, IGetAllPostCommand getAllPost, IGetOnePostCommand getOnePost, IDeletePostCommand deletePost, IUpdatePostCommand updatePost)
+        public PostController(ICreatePostCommand createPost, IGetAllPostCommand getAllPost, IGetOnePostCommand getOnePost, IDeletePostCommand deletePost, IUpdatePostCommand updatePost, IEmailSender sender)
         {
             _createPost = createPost;
             _getAllPost = getAllPost;
             _getOnePost = getOnePost;
             _deletePost = deletePost;
             _updatePost = updatePost;
+            this.sender = sender;
         }
+
+
 
 
         // GET: api/Post
@@ -69,12 +74,16 @@ namespace UniPin.Api.Controllers
 
         // POST: api/Post
         [HttpPost]
-        public ActionResult Post([FromBody] PostDTO dto)
+        public ActionResult Post([FromBody] PostDTO dto, string email)
         {
             try
             {
                 _createPost.Execute(dto);
-                
+                sender.Subject = "Kreiranje posta";
+                sender.ToEmail = email;
+                sender.Body = "Uspesno ste uneli post! :D";
+                sender.Send();
+
             }
             catch (Exception e)
             {
@@ -86,7 +95,7 @@ namespace UniPin.Api.Controllers
 
         // PUT: api/Post/5
         [HttpPut("{id}")]
-        public ActionResult Put(int id, [FromBody] PostDTO dto)
+        public ActionResult Put(int id, [FromBody] PostDTO dto,string email)
         {
             dto.Id = id;
             try
@@ -96,6 +105,10 @@ namespace UniPin.Api.Controllers
                     throw new Exception("Not Found");
                 }
                  _updatePost.Execute(dto);
+                sender.Subject = "Izmena posta";
+                sender.ToEmail = email;
+                sender.Body = "Uspesno ste izmenili post! :D";
+                sender.Send();
                 return NoContent();
             }
             catch (EntityNotFoundException e)

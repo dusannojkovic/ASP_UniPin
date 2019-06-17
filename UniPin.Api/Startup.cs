@@ -10,6 +10,7 @@ using Application.Commands.Comment;
 using Application.Commands.Picture;
 using Application.Commands.Post;
 using Application.Commands.Rule;
+using Application.Interfaces;
 using EFCommand;
 using EFCommand.CategoryCommand;
 using EFCommand.CommentCommand;
@@ -25,6 +26,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
+using UniPin.Api.Email;
 using UniPin.Api.Helpers;
 using UniPin_DataAccess;
 
@@ -78,12 +80,16 @@ namespace UniPin.Api
             services.AddTransient<IDeletePictureCommand, EfDeletePictureCommand>();
 
             //PostCommand
-
+         
             services.AddTransient<ICreatePostCommand, EfCreatePostCommand>();
             services.AddTransient<IGetAllPostCommand, EfGetAllPostCommand>();
             services.AddTransient<IGetOnePostCommand, EfGetOnePostCommand>();
             services.AddTransient<IDeletePostCommand, EfDeletePostCommand>();
             services.AddTransient<IUpdatePostCommand, EfUpdatePostCommand>();
+            var section = Configuration.GetSection("Email");
+            var sender = new SmtpEmailSender(section["host"],Int32.Parse(section["port"]),section["fromaddress"], section["password"]);
+            services.AddSingleton<IEmailSender>(sender);
+          
 
             //CommentCommand
 
