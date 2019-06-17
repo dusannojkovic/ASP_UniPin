@@ -29,11 +29,15 @@ namespace EFCommand
                 throw new EntityNotFoundException("User");
             }
 
+            user = user.Where(use => use.Lozinka == request.Password && use.KorisnickoIme == request.Username);
             return user.Select(us => new LoggedUser
             {
+                Id = us.Id,
                 FirstName = us.Ime,
                 LastName = us.Prezime,
-                Role = us.Rule.Naziv
+                Role = us.Rule.Naziv,
+                Password = us.Lozinka,
+                Username = us.KorisnickoIme
             }).FirstOrDefault();
 
         }

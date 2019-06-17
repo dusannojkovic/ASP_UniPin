@@ -28,35 +28,20 @@ namespace UniPin.Api.Controllers
 
         // POST: api/Auth
         [HttpPost]
-        public IActionResult Post(/*[FromQuery] Logged user*/)
+        public IActionResult Post([FromQuery] Logged userdto)
         {
-            //try
-            //{
-            //    var userLogged = _userLog.Execute(user);
-            //    var stringObject = JsonConvert.SerializeObject(userLogged);
+           
+                var userLogged = _userLog.Execute(userdto);
+                var stringObject = JsonConvert.SerializeObject(userLogged);
 
-            //    var encrypted = _enc.EncryptString(stringObject);
-            //    return Ok(new {token = encrypted});
-            //}
-            //catch (EntityNotFoundException)
-            //{
+                var encrypted = _enc.EncryptString(stringObject);
+            
+            
+      
 
-            //    throw;
-            //}
+         //probao sam autorizaciju ali mi izbacuje gresku prilikom decripcije, navodno token koji posaljem nije string64
 
-            var user = new LoggedUser
-            {
-                FirstName = "Dusan",
-                LastName = "Nojkovic",
-                Id = 5,
-                Username = "pera123",
-                Role = "user",
-                Password = "sifra1"
-                
-            };
-
-            var stringObject = JsonConvert.SerializeObject(user);
-            var encrypted = _enc.EncryptString(stringObject);
+       
  
             return Ok(new {token = encrypted});
         }
@@ -64,7 +49,7 @@ namespace UniPin.Api.Controllers
         public  IActionResult Decode(string value)
         {
             var decodedString = _enc.DecryptString(value);
-            return null;
+            return Ok(decodedString);
         } 
 
        
