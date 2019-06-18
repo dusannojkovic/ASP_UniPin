@@ -74,7 +74,7 @@ namespace UniPin.Api.Controllers
 
         // POST: api/Post
         [HttpPost]
-        public ActionResult Post([FromBody] PostDTO dto, string email)
+        public ActionResult Post([FromQuery] PostDTO dto, string email)
         {
             try
             {

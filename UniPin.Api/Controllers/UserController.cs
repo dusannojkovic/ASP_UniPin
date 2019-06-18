@@ -31,6 +31,11 @@ namespace UniPin.Api.Controllers
         }
 
 
+
+        /// <summary>
+        /// Vraca sve korisnike kao i njihove uloge
+        /// Mogucnost pretrage po imenu i prezimenu
+        /// </summary>
         // GET: api/User
         [HttpGet]
         public ActionResult<IEnumerable<UserDTO>> Get([FromQuery] UserSearch search)
@@ -48,6 +53,9 @@ namespace UniPin.Api.Controllers
             
         }
 
+        /// <summary>
+        /// Vraca jednog korisnika i njegove podatke
+        /// </summary>
         // GET: api/User/5
         [HttpGet("{id}")]
         public ActionResult<UserDTO> Get(int id)
@@ -67,7 +75,18 @@ namespace UniPin.Api.Controllers
             }
 
         }
-
+        /// <summary>
+        /// Ubacivanje korisnika u bazi
+        /// Format unosa je 
+        /// {
+        ///   "Id": 0,
+        ///   "Ime": "string",
+        ///   "Prezime": "string",
+        ///   "korisnickoIme" : "string",
+        ///   "lozinka" : "string"
+        ///   "ruleId" : 0
+        /// }
+        /// </summary>
         // POST: api/User
         [HttpPost]
         public ActionResult Post([FromBody] UserDTO dto)
@@ -111,7 +130,9 @@ namespace UniPin.Api.Controllers
                 return StatusCode(500, "An error has occured.");
             }
         }
-
+        /// <summary>
+        /// Brisanje odredjenog korisnika iz baze
+        /// </summary>
         // DELETE: api/User/5
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)

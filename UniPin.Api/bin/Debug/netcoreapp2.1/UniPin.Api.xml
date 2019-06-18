@@ -14,5 +14,61 @@
             Return ONE CATEGORY
             </summary>
         </member>
+        <member name="M:UniPin.Api.Controllers.RuleController.Get(Application.Searches.RuleSearch)">
+            <summary>
+            Vraca sve uloge kao i nazive tih uloga
+            Mogucnost pretrage po NAZIVU
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.RuleController.Get(System.Int32)">
+            <summary>
+            Vraca jednu ulogu i njene podatke
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.RuleController.Post(Application.DTO.RuleDTO)">
+            <summary>
+            Ubacivanje uloge u bazi
+            Format unosa je 
+            {
+              "Id": 0,
+              "naziv": "string",
+            }
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.RuleController.Delete(System.Int32)">
+            <summary>
+            Brisanje odredjene uloge iz baze
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.UserController.Get(Application.Searches.UserSearch)">
+            <summary>
+            Vraca sve korisnike kao i njihove uloge
+            Mogucnost pretrage po imenu i prezimenu
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.UserController.Get(System.Int32)">
+            <summary>
+            Vraca jednog korisnika i njegove podatke
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.UserController.Post(Application.DTO.UserDTO)">
+            <summary>
+            Ubacivanje korisnika u bazi
+            Format unosa je 
+            {
+              "Id": 0,
+              "Ime": "string",
+              "Prezime": "string",
+              "korisnickoIme" : "string",
+              "lozinka" : "string"
+              "ruleId" : 0
+            }
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.UserController.Delete(System.Int32)">
+            <summary>
+            Brisanje odredjenog korisnika iz baze
+            </summary>
+        </member>
     </members>
 </doc>

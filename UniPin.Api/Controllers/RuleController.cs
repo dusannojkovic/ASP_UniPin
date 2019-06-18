@@ -31,7 +31,10 @@ namespace UniPin.Api.Controllers
             _updateRule = updateRule;
         }
 
-
+        /// <summary>
+        /// Vraca sve uloge kao i nazive tih uloga
+        /// Mogucnost pretrage po NAZIVU
+        /// </summary>
         // GET: api/Rule
         [HttpGet]
         public ActionResult<IEnumerable<RuleDTO>> Get([FromBody]RuleSearch search)
@@ -53,6 +56,9 @@ namespace UniPin.Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Vraca jednu ulogu i njene podatke
+        /// </summary>
         // GET: api/Rule/5
         [HttpGet("{id}")]
         public ActionResult<RuleDTO> Get(int id)
@@ -74,6 +80,14 @@ namespace UniPin.Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Ubacivanje uloge u bazi
+        /// Format unosa je 
+        /// {
+        ///   "Id": 0,
+        ///   "naziv": "string",
+        /// }
+        /// </summary>
         // POST: api/Rule
         [HttpPost]
         public ActionResult Post([FromBody] RuleDTO dto)
@@ -119,6 +133,9 @@ namespace UniPin.Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Brisanje odredjene uloge iz baze
+        /// </summary>
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
