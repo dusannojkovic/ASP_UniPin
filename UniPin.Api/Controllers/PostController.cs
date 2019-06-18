@@ -35,7 +35,10 @@ namespace UniPin.Api.Controllers
 
 
 
-
+        /// <summary>
+        /// Vraca sve postove, slike postova i listu komentara vezanih za taj post
+        /// Mogucnost pretrage po naslovu, opisu, paginacija, po imenu autora posta
+        /// </summary>
         // GET: api/Post
         [HttpGet]
         public ActionResult<IEnumerable<PostDTO>> Get([FromQuery] PostSearch search)
@@ -52,6 +55,9 @@ namespace UniPin.Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Vraca jedan post i sve detalje o njemu
+        /// </summary>
         // GET: api/Post/5
         [HttpGet("{id}")]
         public ActionResult<PostDTO> Get(int id)
@@ -72,6 +78,9 @@ namespace UniPin.Api.Controllers
 
         }
 
+        /// <summary>
+        /// Ubacivanje posta u bazi
+        /// </summary>
         // POST: api/Post
         [HttpPost]
         public ActionResult Post([FromQuery] PostDTO dto, string email)
@@ -128,7 +137,9 @@ namespace UniPin.Api.Controllers
             }
 
         }
-
+        /// <summary>
+        /// Brisanje odredjenog posta iz baze
+        /// </summary>
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)

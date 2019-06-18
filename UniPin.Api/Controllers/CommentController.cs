@@ -30,7 +30,10 @@ namespace UniPin.Api.Controllers
             _update = update;
         }
 
-
+        /// <summary>
+        /// Vraca sve komentare kao i informacije o autoru i postu za koji je komentar vezan
+        /// Mogucnost pretrage po username i id
+        /// </summary>
         // GET: api/Commant
         [HttpGet]
         public ActionResult<IEnumerable<CommentDTO>> Get([FromQuery]CommentSearch search)
@@ -48,6 +51,9 @@ namespace UniPin.Api.Controllers
 
         }
 
+        /// <summary>
+        /// Vraca jedan komentar i njegove podatke
+        /// </summary>
         // GET: api/Commant/5
         [HttpGet("{id}")]
         public ActionResult<CommentDTO> Get(int id)
@@ -67,6 +73,16 @@ namespace UniPin.Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Ubacivanje komentara u bazi
+        /// Format unosa je 
+        /// {
+        ///   "Tekst": "string",
+        ///   "PostByUser": "string",
+        ///   "PostId" : 0,
+        ///   "UserId" : 0
+        /// }
+        /// </summary>
         // POST: api/Commant
         [HttpPost]
         public ActionResult Post([FromBody] CommentDTO dto)
@@ -110,6 +126,9 @@ namespace UniPin.Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Brisanje odredjenog komentara iz baze
+        /// </summary>
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)

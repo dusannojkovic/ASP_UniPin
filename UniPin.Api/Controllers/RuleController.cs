@@ -148,7 +148,7 @@ namespace UniPin.Api.Controllers
             catch (EntityNotFoundException)
             {
 
-                throw;
+                throw new EntityNotFoundException("Uloga");
             }
             catch
             {

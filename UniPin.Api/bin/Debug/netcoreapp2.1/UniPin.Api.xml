@@ -14,6 +14,81 @@
             Return ONE CATEGORY
             </summary>
         </member>
+        <member name="M:UniPin.Api.Controllers.CommentController.Get(Application.Searches.CommentSearch)">
+            <summary>
+            Vraca sve komentare kao i informacije o autoru i postu za koji je komentar vezan
+            Mogucnost pretrage po username i id
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.CommentController.Get(System.Int32)">
+            <summary>
+            Vraca jedan komentar i njegove podatke
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.CommentController.Post(Application.DTO.CommentDTO)">
+            <summary>
+            Ubacivanje komentara u bazi
+            Format unosa je 
+            {
+              "Tekst": "string",
+              "PostByUser": "string",
+              "PostId" : 0,
+              "UserId" : 0
+            }
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.CommentController.Delete(System.Int32)">
+            <summary>
+            Brisanje odredjenog komentara iz baze
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.PictureController.Get(Application.Searches.PictureSearch)">
+            <summary>
+            Vraca sve slike iz baze
+            Mogucnost pretrage po altu
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.PictureController.Get(System.Int32)">
+            <summary>
+            Vraca jednu sliku sa opisom
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.PictureController.Post(UniPin.Api.CreatePicture)">
+            <summary>
+            Ubacivanje slike u bazu
+            Format unosa je 
+            {
+              "alt": "string",
+              "Image": "file"
+            }
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.PictureController.Delete(System.Int32)">
+            <summary>
+            Brisanje odredjene slike iz baze
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.PostController.Get(Application.Searches.PostSearch)">
+            <summary>
+            Vraca sve postove, slike postova i listu komentara vezanih za taj post
+            Mogucnost pretrage po naslovu, opisu, paginacija, po imenu autora posta
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.PostController.Get(System.Int32)">
+            <summary>
+            Vraca jedan post i sve detalje o njemu
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.PostController.Post(Application.DTO.PostDTO,System.String)">
+            <summary>
+            Ubacivanje posta u bazi
+            </summary>
+        </member>
+        <member name="M:UniPin.Api.Controllers.PostController.Delete(System.Int32)">
+            <summary>
+            Brisanje odredjenog posta iz baze
+            </summary>
+        </member>
         <member name="M:UniPin.Api.Controllers.RuleController.Get(Application.Searches.RuleSearch)">
             <summary>
             Vraca sve uloge kao i nazive tih uloga

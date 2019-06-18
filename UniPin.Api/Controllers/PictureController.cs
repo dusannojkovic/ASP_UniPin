@@ -37,7 +37,10 @@ namespace UniPin.Api.Controllers
 
 
 
-
+        /// <summary>
+        /// Vraca sve slike iz baze
+        /// Mogucnost pretrage po altu
+        /// </summary>
 
 
         // GET: api/Picture
@@ -58,6 +61,9 @@ namespace UniPin.Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Vraca jednu sliku sa opisom
+        /// </summary>
         // GET: api/Picture/5
         [HttpGet("{id}")]
         public ActionResult<PictureDTO> Get(int id)
@@ -77,6 +83,15 @@ namespace UniPin.Api.Controllers
             }
             
         }
+
+        /// <summary>
+        /// Ubacivanje slike u bazu
+        /// Format unosa je 
+        /// {
+        ///   "alt": "string",
+        ///   "Image": "file"
+        /// }
+        /// </summary>
 
         // POST: api/Picture
         [HttpPost]
@@ -141,6 +156,9 @@ namespace UniPin.Api.Controllers
             }
         }
 
+        /// <summary>
+        /// Brisanje odredjene slike iz baze
+        /// </summary>
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public ActionResult Delete(int id)
