@@ -17,4 +17,5 @@ namespace UniPin_ConsoleApp
             context.SaveChanges();
         }
     }
+    //ovo je samo pocetni test
 }
